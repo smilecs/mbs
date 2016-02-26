@@ -133,6 +133,7 @@ $scope.user = {};
 $scope.addser = function(data){
 	$http.post('/users/register/', data).success(function(data){
 	  console.log(data);
+		$scope.user = {};
 	});
 };
 });
