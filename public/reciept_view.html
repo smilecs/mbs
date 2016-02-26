@@ -1,0 +1,66 @@
+<section class="invoice">
+         <!-- title row -->
+         <div class="row">
+           <div class="col-xs-12">
+             <h2 class="page-header">
+               <i class="fa fa-globe"></i>
+             </h2>
+           </div><!-- /.col -->
+         </div>
+         <!-- info row -->
+         <div class="row invoice-info">
+           <div class="col-sm-4 invoice-col">
+             To
+             <address>
+               <strong>{{user.name}}</strong><br>
+               {{user.location}}<br>
+               {{user.contact}}<br>
+               {{user.state}}<br>
+               {{user.email}}
+             </address>
+           </div><!-- /.col -->
+      <!-- /.col -->
+           <div class="col-sm-4 invoice-col">
+             <br>
+             <b>Invoice :</b>{{result._id}}<br>
+                     </div><!-- /.col -->
+         </div><!-- /.row -->
+
+         <!-- Table row -->
+         <div class="row">
+           <div class="col-xs-12 table-responsive">
+             <table class="table table-striped">
+               <thead>
+                 <tr>
+                   <th>Service</th>
+                   <th>Amount</th>
+                 </tr>
+               </thead>
+               <tbody>
+                 <tr ng-repeat="data in result.rep">
+                   <td>{{data.name}}</td>
+                   <td>{{data.amount}}</td>
+                 </tr>
+              </tbody>
+             </table>
+           </div><!-- /.col -->
+         </div><!-- /.row -->
+
+         <div class="row">
+           <!-- accepted payments column -->
+           <div class="col-xs-6">
+             <p class="lead">Payment Methods:</p>
+             <img src="/images/visa.png" alt="Visa">
+             <img src="/images/mastercard.png" alt="Mastercard">
+           </div><!-- /.col -->
+           <div class="col-xs-6">
+             <div class="table-responsive">
+               <table class="table">
+                 <tr>
+                   <th>Total:</th>
+                   <td>{{total[0]}}</td>
+                 </tr>
+               </table>
+             </div>
+           </div><!-- /.col -->
+         </div><!-- /.row -->

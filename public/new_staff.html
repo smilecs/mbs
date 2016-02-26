@@ -1,0 +1,90 @@
+
+      <h1>New User</h1>
+      <p>Please fill the form below to start</p>
+
+      <div class="form-group">
+        <label for="name" class="col-sm-2 control-label">Name</label>
+<input type="text"  id="name" name="sname" class="form-control" placeholder="Your name" ng-model="user.name" REQUIRED />
+</div>
+
+<div class="form-group">
+  <label for="phone" class="col-sm-2 control-label">Phone</label>
+  <input type="text" name="phone"  id="phone" class="form-control" placeholder="Your Phone No." ng-model="user.phone" REQUIRED />
+</div>
+
+<div class="form-group">
+  <label for="user" class="col-sm-2 control-label">Username</label>
+  <input type="text" id="user" class="form-control" ng-model="user.username"/>
+</div>
+
+<div class="form-group">
+  <label for="pass" class="col-sm-2 control-label">Password</label>
+    <input type="text" name="address" id="pass" class="form-control"  ng-model="user.password" REQUIRED />
+</div>
+
+<div class="form-group">
+  <label for="email" class="col-sm-2 control-label">Email</label>
+  <input type="text" id="email" class="form-control" ng-model="user.email"/>
+</div>
+
+<div class="form-group">
+  <label for="addr" class="col-sm-2 control-label">Contact Address</label>
+    <input type="text" name="address" id="addr" class="form-control"  ng-model="user.contact" REQUIRED />
+</div>
+
+
+<div class="form-group">
+  <label for="select" class="col-sm-2 control-label">State</label>
+        <select name="state" id="select" ng-model="user.state" class="form-control">
+          <option value="">--select State--</option>
+        <option value="Abia">Abia</option>
+  <option value="Adamawa">Adamawa</option>
+        <option value="Akwa Ibom">Akwa Ibom</option>
+  <option value="Anambra">Anambra</option>
+        <option value="Bauchi">Bauchi</option>
+  <option value="Bayelsa">Bayelsa</option>
+        <option value="Benue">Benue</option>
+  <option value="Borno">Borno</option>
+        <option value="Cross River">Cross River</option>
+  <option value="Delta">Delta</option>
+        <option value="Ebonyi">Ebonyi</option>
+        <option value="Edo">Edo</option>
+        <option value="Ekiti">Ekiti</option>
+        <option value="Enugu">Enugu</option>
+        <option value="Gombe">Gombe</option>
+  <option value="Imo">Imo</option>
+        <option value="Jigawa">Jigawa</option>
+        <option value="Kaduna">Kaduna</option>
+        <option value="Kano">Kano</option>
+        <option value="Katsina">Katsina</option>
+        <option value="Kebbi">Kebbi</option>
+  <option value="Kogi">Kogi</option>
+        <option value="Kwara">Kwara</option>
+        <option value="Lagos">Lagos</option>
+        <option value="Nasarawa">Nasarawa</option>
+        <option value="Niger">Niger</option>
+        <option value="Ogun">Ogun</option>
+  <option value="Ondo">Ondo</option>
+        <option value="Osun">Osun</option>
+        <option value="Oyo">Oyo</option>
+        <option value="Plateau">Plateau</option>
+        <option value="Rivers">Rivers</option>
+        <option value="Sokoto">Sokoto</option>
+        <option value="Taraba">Taraba</option>
+        <option value="Yobe">Yobe</option>
+        <option value="Zamfara">Zamfara</option>
+        <option value="FCT">FCT</option>
+  </select>
+</div>
+<div class="form-group">
+  <label for="dob" class="col-sm-2 control-label">Date</label>
+  <input type="date" id="dob" ng-model="user.date_birth" name="d_bth" class="form-control"  />
+</div>
+
+<div class="form-group">
+  <label for="sex" class="col-sm-2 control-label">Sex</label>
+  <input type="radio" name="sex" id="sex" value="male" ng-model="user.sex"/>Male<input type="radio" name="sex" value="female" ng-model="user.sex"/>Female</td>
+</div>
+<div class="form-group">
+  <button class="btn btn-primary" ng-click="addser(user)">Save</button>
+</div>

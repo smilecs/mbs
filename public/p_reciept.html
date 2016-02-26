@@ -1,0 +1,22 @@
+<div class="box">
+<div class="box-body no-padding">
+<div class="table-responsive">
+<table class="table">
+<thead>
+<tr>
+<th>
+Patients Reciepts
+</th>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="data in result">
+<td>
+<a href="#/reciept/{{data._id}}">{{data._id}}</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></div>
+<button class="btn btn-default" ng-click="add()">Create Reciept</button>

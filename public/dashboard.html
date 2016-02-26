@@ -1,0 +1,56 @@
+
+<div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="info-box">
+                <span class="info-box-icon bg-green"><i class="fa fa-flag-o"></i></span>
+                <div class="info-box-content">
+                  <span class="info-box-text">Total Amount</span>
+                  <span class="info-box-number">{{amount}}</span>
+                </div><!-- /.info-box-content -->
+              </div><!-- /.info-box -->
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                          <div class="info-box">
+                            <span class="info-box-icon bg-green"><i class="fa fa-flag-o"></i></span>
+                            <div class="info-box-content">
+                              <span class="info-box-text">Total No Transactions</span>
+                              <span class="info-box-number">{{trans}}</span>
+                            </div><!-- /.info-box-content -->
+                          </div><!-- /.info-box -->
+                        </div>
+
+
+                        <div class="box-body">
+
+                        <canvas id="pieChart" class="chart chart-doughnut"
+                          chart-data="bank_amount" chart-labels="bank_name" chart-legend="true" style="height:200px">
+                        </canvas>
+                      </div>
+
+                        <div class="box">
+<div class="box-body no-padding">
+<div class="table-responsive">
+<table class="table">
+  <thead>
+  <tr>
+    <th>
+      Service Name
+    </th>
+    <th>
+      Amount
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="data in map">
+    <td>
+      {{data.name}}
+    </td>
+    <td>
+      {{data.amount}}
+    </td>
+  </tr>
+  </tbody>
+</table>
+</div>
+</div></div>

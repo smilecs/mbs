@@ -1,0 +1,53 @@
+<div class="box">
+<div class="box-body no-padding">
+<div class="table-responsive">
+<table class="table">
+<thead>
+<tr>
+<th>
+Reciept
+</th>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="data in result">
+<td>
+{{data.name}}
+</td>
+<td>
+{{data.amount}}
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></div>
+<button type="button" ng-click="save()" class="btn btn-default">Save</button>
+<br>
+<div class="box">
+<div class="box-body no-padding">
+<div class="table-responsive">
+<table class="table">
+<thead>
+<tr>
+<th>
+Service
+</th>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="data in service">
+<td>
+{{data.name}}
+</td>
+<td>
+{{data.amount}}
+</td>
+<td>
+  <button type="button" ng-click="add(data)" class="btn btn-info">Add</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></div>
