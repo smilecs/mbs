@@ -150,6 +150,7 @@ $scope.addUser = function(data){
 	$scope.result.push(data);
 	$http.post('/users/add_item/', data).success(function(data){
 	  console.log(data);
+		$scope.service = {};
 	});
 };
 });
