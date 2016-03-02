@@ -19,11 +19,22 @@ app.config(['$routeProvider', function($routeProvider){
 		controller: 'recieptCtrl',
 		templateUrl:'../reciept_view.html'
 	}).when('/',{
-	controller: 'DashCtlr',
-	templateUrl: '../dashboard.html'
+	controller: 'ProfileCtlr',
+	templateUrl: '../client.html'
 	});
 }]);
+app.controller('ProfileCtlr', function($scope, $http, $cookieStore){
+  var id = $cookieStore.get('id');
+  $scope.result = {};
+  $scope.reciepts = {};
+  $http.get('/users/user/'+id).success(function(data){
+    $scope.result = data;
+  });
+  $http.get('/users/report/'+id).success(function(data){
+  	$scope.reciepts = data;
+  });
 
+});
 app.controller('DashCtlr', function($scope, $http){
 	var map = {};
 	$scope.bank_name = [];
@@ -153,29 +164,4 @@ $scope.newfile1 = function(file){
 
 };
 
-});
-
-app.controller('AddSerCtrl',function($scope, $http, $routeParams){
-$scope.service = {};
-$scope.result = {};
-$http.get('/users/service').success(function(data){
-	console.log(data);
-	$scope.result = data;
-});
-
-$scope.addUser = function(data){
-	$scope.result.push(data);
-	$http.post('/users/add_item/', data).success(function(data){
-	  console.log(data);
-		$scope.service = {};
-	});
-};
-});
-
-app.controller('ViewPCtrl',function($scope, $http, $routeParams){
-$scope.result = {};
-$http.get('/users/patients/').success(function(data){
-	console.log(data);
-	$scope.result = data;
-});
 });

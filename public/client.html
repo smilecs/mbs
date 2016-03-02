@@ -1,0 +1,99 @@
+<div class="row">
+            <div class="col-md-3">
+
+              <!-- Profile Image -->
+
+              <div class="box box-primary">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Profile</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                  <img class="profile-user-img img-responsive img-circle" src="dist/img/{{result.image}}" alt="User profile picture">
+
+                  <strong><i class="fa fa-book margin-r-5"></i>  Email</strong>
+                  <p class="text-muted">
+                    {{result.email}}
+                  </p>
+
+                  <strong><i class="fa fa-book margin-r-5"></i>REG ID</strong>
+                  <p class="text-muted">
+                    <?php echo $id; ?>
+                  </p>
+
+
+                  <hr>
+
+                  <strong><i class="fa fa-map-marker margin-r-5"></i> Contact</strong>
+                  <p class="text-muted">{{result.contact}}</p>
+
+                  <hr>
+
+                  <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
+                  <p class="text-muted">{{result.location}}</p>
+                  <hr>
+
+
+                  <strong><i class="fa fa-pencil margin-r-5"></i>State</strong>
+                  <p>
+                    <span class="label label-primary">{{result.state}}</span>
+                  </p>
+
+                  <hr>
+                  <strong><i class="fa fa-map-marker margin-r-5"></i> Date of Birth</strong>
+                  <p class="text-muted">{{result.date_birth}}</p>
+
+                  <hr>
+
+                  <strong><i class="fa fa-map-marker margin-r-5"></i> Sex</strong>
+                  <p class="text-muted">{{result.sex}}</p>
+
+                  <hr>
+          <hr>
+
+          <strong><i class="fa fa-pencil margin-r-5"></i> </strong>
+          <p>
+          <a href="index.php?pag" class="btn btn-primary">Add Vehicle </a></p>
+                </div><!-- /.box-body -->
+              </div><!-- /.box -->
+
+
+              <!-- About Me Box -->
+              <div class="box box-primary">
+                <div class="box-header with-border">
+                </div><!-- /.box-header -->
+
+              </div><!-- /.box -->
+            </div><!-- /.col -->
+            <div class="col-md-9">
+              <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs">
+                  <li class="active"><a href="#account" data-toggle="tab">Reciepts</a></li>
+                </ul>
+                <div class="tab-content">
+                  <div class="active tab-pane" id="account">
+
+                    <div class="box">
+                      <div class="box-header">
+                      </div><!-- /.box-header -->
+                      <div class="box-body no-padding">
+                      <table class="table table-condensed">
+                          <tr ng-repeat="data in reciepts">
+                            <th>{{data._id}}</th>
+                          </tr>
+
+                        </table>
+                        <p>
+                        <a href="index.php?pag" class="btn btn-primary">Add Vehicle </a></p>
+
+                      </div><!-- /.box-body -->
+                    </div>
+
+
+                  </div><!-- /.tab-pane -->
+
+                  <!-- /.tab-pane -->
+                </div><!-- /.tab-content -->
+              </div><!-- /.nav-tabs-custom -->
+            </div><!-- /.col -->
+          </div><!-- /.row -->

@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var mongodbURL = process.env.MONGOLAB_URI || 'mongodb://heroku_zs26g5hb:ioqg1a8fs2r7njlbbik1dg2qfd@ds017678.mlab.com:17678/heroku_zs26g5hb' || 'mongodb://localhost/mbs';
+var mongodbURL = process.env.MONGOLAB_URI || 'mongodb://localhost/mbs';
 var mongodbOptions = {};
 var db = mongoose.connection;
 db.on('error', console.error);
@@ -34,6 +34,7 @@ var User = new Schema({
 	email: String,
 	name: String,
 	username: String,
+	image: String,
 	password: String,
 	contact:String,
 	state:String,

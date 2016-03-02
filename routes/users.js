@@ -33,6 +33,8 @@ var data = req.body;
   var use = new user({
         name: data.name,
         email: data.email,
+				username: data.username,
+				password: data.password,
       contact: data.contact,
        sex: data.sex,
        state: data.state,
@@ -105,6 +107,16 @@ router.get('/report_item', function(req, res){
 
 router.get('/report/:_id', function(req, res){
 	recs.find({"user":req.params._id}, function(err, result){
+		if(err){
+			console.log(err);
+			return res.send(500);
+		}
+		return res.json(200, result);
+	});
+});
+
+router.get('/user/:_id', function(req, res){
+	user.find({"_id":req.params._id}, function(err, result){
 		if(err){
 			console.log(err);
 			return res.send(500);
