@@ -29,21 +29,27 @@ app.controller('DashCtlr', function($scope, $http){
 	$scope.bank_name = [];
 	var transaction = 0;
 	$scope.map = [];
-	  var amount = 0;
+	var amount = 0;
 	$scope.bank_amount = [];
 	$http.get('/users/dashboard').success(function(data){
+	console.log(data);
 		for(var i = 0; i < data.length; i++){
 			for(var k= 0; k< data[i].rep.length; k++){
-				var dat = data[i].rep;
-				if(!(dat[i].name in map)){
-						map[dat[i].name] = parseInt(dat[i].amount);
+				var dat = data[i].rep[k];
+				if(!(dat.name in map)){
+						map[dat.name] = parseInt(dat.amount);
 					transaction++;
 				}else {
-					map[dat[i].name] += parseInt(dat[i].amount);
+					map[dat.name] += parseInt(dat.amount);
 					transaction++;
 				}
 			}
 	}
+	$http.get('/users/patients/').success(function(data){
+		console.log(data);
+		$scope.pat = data.length;
+	});
+	console.log(map.length);
 	for (var ii in map){
 	$scope.bank_name.push(ii);
 	$scope.bank_amount.push(map[ii]);
@@ -54,10 +60,6 @@ app.controller('DashCtlr', function($scope, $http){
 $scope.amount = amount;
 $scope.trans = transaction;
 	});
-
-
-
-
 });
 
 app.controller('new_repCtrl',function($scope, $http, $routeParams, $location){

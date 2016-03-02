@@ -33,7 +33,9 @@ var data = req.body;
   var use = new user({
         name: data.name,
         email: data.email,
+				date_birth: data.date_birth,
 				username: data.username,
+				image:data.image,
 				password: data.password,
       contact: data.contact,
        sex: data.sex,
