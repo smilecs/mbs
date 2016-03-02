@@ -1,4 +1,4 @@
-var app = angular.module('mbs', ['chart.js','ngRoute', 'ngCookies']);
+var app = angular.module('mbsc', ['chart.js','ngRoute', 'ngCookies']);
 app.config(['$routeProvider', function($routeProvider){
 	$routeProvider.when('/new_user', {
 		controller:'NewUserCtrl',
@@ -23,16 +23,32 @@ app.config(['$routeProvider', function($routeProvider){
 	templateUrl: '../client.html'
 	});
 }]);
-app.controller('ProfileCtlr', function($scope, $http, $cookieStore){
-  var id = $cookieStore.get('id');
-  $scope.result = {};
+app.controller('ProfileCtlr', function($scope, $http, $cookieStore, $location){
+	$scope.result = {};
   $scope.reciepts = {};
+	var tmp = $location.absUrl();
+	var new_tmp = tmp.split('/');
+	$cookieStore.put('id', new_tmp[4]);
+	//console.log("this is the id  "+new_tmp[4]);
+	var id = $cookieStore.get('id');
+	console.log("this is the id  "+id);
+
   $http.get('/users/user/'+id).success(function(data){
     $scope.result = data;
+		console.log(data);
   });
   $http.get('/users/report/'+id).success(function(data){
   	$scope.reciepts = data;
   });
+
+	$scope.add = function(){
+		$http.post('/users/new_rep/').success(function(data){
+		  console.log(data);
+			$location.path('/new_reciept/'+data._id+'/'+id);
+
+		});
+	};
+
 
 });
 app.controller('DashCtlr', function($scope, $http){
@@ -92,6 +108,7 @@ app.controller('new_repCtrl',function($scope, $http, $routeParams, $location){
 			var data = $scope.result;
 			$http.post('/users/newrep/'+$routeParams.id+'/'+$routeParams.my, data).success(function(data){
 			  console.log(data);
+				$location.path('/');
 			});
 	};
 

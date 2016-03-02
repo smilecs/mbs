@@ -23,7 +23,7 @@ router.post('/sign_in', function(req, res){
 			return res.send(401);
 		}
 		console.log(data);
-		return res.redirect('user/');
+		return res.redirect('/user/'+data._id);
 			});
 });
 
@@ -116,12 +116,12 @@ router.get('/report/:_id', function(req, res){
 });
 
 router.get('/user/:_id', function(req, res){
-	user.find({"_id":req.params._id}, function(err, result){
+	user.findOne({"_id":req.params._id}, function(err, result){
 		if(err){
 			console.log(err);
 			return res.send(500);
 		}
-		return res.json(200, result);
+		return res.status(200).json(result);
 	});
 });
 
@@ -151,6 +151,7 @@ router.get('/user/:id', function(req, res){
 			console.log(err);
 			return res.send(500);
 		}
+		console.log(result);
 		return res.json(200, result);
 	});
 });

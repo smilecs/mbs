@@ -53,8 +53,7 @@
 
           <strong><i class="fa fa-pencil margin-r-5"></i> </strong>
           <p>
-          <a href="index.php?pag" class="btn btn-primary">Add Vehicle </a></p>
-                </div><!-- /.box-body -->
+        </div><!-- /.box-body -->
               </div><!-- /.box -->
 
 
@@ -79,13 +78,13 @@
                       <div class="box-body no-padding">
                       <table class="table table-condensed">
                           <tr ng-repeat="data in reciepts">
-                            <th>{{data._id}}</th>
-                          </tr>
+                            <th><a href="#/reciept/{{data._id}}">{{data._id}}</a>
+</th>
+</tr>
 
                         </table>
                         <p>
-                        <a href="index.php?pag" class="btn btn-primary">Add Vehicle </a></p>
-
+  <button type="button" ng-click="add(data)" class="btn btn-info">Add</button>
                       </div><!-- /.box-body -->
                     </div>
 
