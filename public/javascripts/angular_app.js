@@ -166,10 +166,10 @@ $http.get('/users/service').success(function(data){
 });
 
 $scope.addUser = function(data){
+		$scope.service = {};
 	$scope.result.push(data);
 	$http.post('/users/add_item/', data).success(function(data){
-	  console.log(data);
-		$scope.service = {};
+
 	});
 };
 });
